@@ -1,0 +1,34 @@
+header .nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+header .nav-link{
+    border-radius: 5px;
+}
+
+header .nav-link:hover, header .nav-link:focus {
+    color: #fff;
+    background-color: #f9a826;
+    border-radius: 5px;
+}
+
+header .active::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #f9a826;
+    border-radius: 5px;
+}
+
+header .navbar-toggler{
+    border: none;
+    outline: none;
+}
+
+header .navbar-toggler:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 0.2rem #d90268;
+}

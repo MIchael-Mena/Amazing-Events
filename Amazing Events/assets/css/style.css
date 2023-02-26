@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@200;300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main, footer{
+    font-family: 'Poppins', sans-serif;
+}
+
+header .navbar{
+    font-family: 'Genos', sans-serif;
+    min-height: 56px;
+    height: 10vh;
+    width: 100%;
+}
+
+footer{
+    top: 10vh;
+    position: relative;
+    min-height: 110px;
+    height: 15vh;
+    width: 100%;
+}
+
+main{
+    position: relative;
+    top: 10vh;
+    min-height: calc(100vh - 25vh);
+}
+
+@media (max-width: 768px){
+    header .navbar{
+        height: auto;
+    }
+
+    /* navbar tiene 71px cuando esta collapsado */
+    main{
+        min-height: calc(85vh - 71px);
+        top: 71px;
+    }
+
+    footer{
+        top: 71px;
+    }
+}
