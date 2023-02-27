@@ -5,27 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amazing Events</title>
+    <link rel="icon" href="../assets/images/logos/Logo-Amazing-Events.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/nav.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/footer.css" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark-per fixed-top">
+            <div class="container-fluid ms-lg-5 ms-md-2">
                 <a class="navbar-brand" href="#">
-                    <img src="../assets/images/logos/Logo-Amazing-Events.png" width="auto" height="45" alt="">
+                    <img src="../assets/images/logos/Logo-Amazing-Events.png" width="auto" height="45"
+                        alt="Amazing Events">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <!-- < class="navbar-nav me-auto mb-2 mb-md-0 "> -->
-                    <ul class="navbar-nav d-inline-flex d-md-flex  align-items-end align-items-md-center w-100 justify-content-end">
+                <div class="collapse navbar-collapse me-lg-5 me-md-2" id="navbarCollapse">
+                    <ul
+                        class="navbar-nav d-inline-flex d-md-flex align-items-end align-items-md-center w-100 justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link active text-uppercase" href="#">home</a>
                         </li>
@@ -36,14 +40,11 @@
                             <a class="nav-link text-uppercase" href="#">past events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">contact</a>
+                            <a class="nav-link text-uppercase" href="contact.html">contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">stats</a>
+                            <a class="nav-link text-uppercase" href="stats.html">stats</a>
                         </li>
-<!--                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li> -->
                     </ul>
 
                 </div>
@@ -52,180 +53,180 @@
     </header>
 
 
-    <main class="bg-light">
+    <main class="bg-light-per">
 
-        <!--         <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Album example</h1>
-                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the
-                        creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-                        entirely.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                    </p>
+        <div class="d-flex justify-content-evenly align-items-center py-3 nav-arrow w-100">
+            <i class="fa-solid fa-chevron-left fa-2xl arrow"></i>
+            <h1 class="main-title">Home</h1>
+            <i class="fa-solid fa-chevron-right fa-2xl arrow"></i>
+        </div>
+
+        <div class="container h-100 pt-3 pb-5">
+
+            <form class="d-inline-flex justify-content-md-between align-items-center w-100 my-md-4 my-1 flex-wrap flex-md-nowrap justify-content-center">
+                <div class="d-flex justify-content-center flex-wrap ">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="CategoryFirst" checked>
+                        <label class="form-check-label" for="CategoryFirst">
+                            Category
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="CategorySecond" name="category">
+                        <label class="form-check-label" for="CategorySecond">
+                            Category
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="CategoryThird" name="category">
+                        <label class="form-check-label" for="CategoryThird">
+                            Category
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="CategoryFourth" name="category">
+                        <label class="form-check-label" for="CategoryFourth">
+                            Category
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="CategoryFifth" name="category">
+                        <label class="form-check-label" for="CategoryFifth">
+                            Category
+                        </label>
+                    </div>
                 </div>
-            </div>
-        </section> -->
+                <div class="input-group finder-container my-3 my-md-0">
+                    <input type="text" class="form-control" placeholder="Find an event" aria-label="Finder" 
+                    id="inputFinder" onblur="blurLabel()" onfocus="focusLabel">
+                    <div class="input-group-append">
+                        <span class="input-group-text finder-container-label" id="finderContainerLabel" style="background-color:#20262e">
+                            <i class="fa-solid fa-magnifying-glass-arrow-right fa-2x fa-flip-horizontal"
+                            style="color:#E9E8E8"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
 
 
-        <div class="container py-5 h-100">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center h-100">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center align-items-center h-100 my-md-1 m-0 row-gap-3">
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Cinema.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-<!--                 <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Costume_Party.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Food_Fair.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary " onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Marathon.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Museum_Tour.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
+                <div class="col d-inline-flex justify-content-center">
+                    <div class="card">
+                        <img src="../assets/images/events/Music_Concert.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
+                                <small class="price">Price $0000</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="showDetail()">See more...</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
             </div>
         </div>
 
     </main>
 
-    <footer class="text-center text-lg-start bg-dark text-light">
-        <div class="container d-flex justify-content-between align-items-center h-100">
+    <footer class="text-center text-lg-start bg-dark-per text-light">
+        <div class="container d-flex justify-content-evenly align-items-center h-100">
+            <div >
+                <i class="fa-brands fa-instagram fa-3x mx-2 social-icon"></i>
+                <i class="fa-brands fa-facebook fa-3x mx-2 social-icon"></i>
+                <i class="fa-brands fa-whatsapp fa-3x mx-2 social-icon"></i>
+            </div>
             <div>
-                <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
-                <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-                        href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
-
+                Comming soon...
             </div>
             <p class="mb-1">
-                <a href="#">Back to top</a>
+                <a href="#" class="nav-link d-flex justify-content-center flex-column gap-2 align-items-center social-icon">
+                    <i class="fa-solid fa-arrow-up-long fa-2x"></i>
+                    <b>Back to top</b>
+                </a>
             </p>
         </div>
     </footer>
@@ -233,6 +234,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
+    <script src="https://kit.fontawesome.com/e1b7ae46e3.js" crossorigin="anonymous"></script>
+    <script src="../scripts/toggleFinder.js">
+    </script>
+    <script>
+        function showDetail() {
+            window.open("details.html",'_self');
+        }
+    </script>
 </body>
 
 </html>

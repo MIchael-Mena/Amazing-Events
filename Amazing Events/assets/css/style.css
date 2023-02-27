@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+.bg-dark-per{
+    background-color: #20262E;
+}
+
+.bg-light-per{
+    background-color: #e9e8e8;
+}
+
 main, footer{
     font-family: 'Poppins', sans-serif;
 }

@@ -1,0 +1,157 @@
+.nav-arrow {
+    background-color: #913175;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+    height: 100px;
+}
+
+.main-title {
+    font-family: 'Genos', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0.1rem 0.1rem #000;
+}
+
+.form-check-input:focus {
+    border: none;
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+.form-check-input:checked {
+    background-color: #913175;
+    border-color: #913175;
+}
+
+.arrow {
+    color: #E9E8E8;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #f9a826;
+}
+
+.arrow:active {
+    transform: scale(0.9);
+}
+
+
+/* HOME AND UPCOMING EVENTS CSS */
+
+.form-control:focus, #inputFinder:focus {
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+
+#inputFinder {
+    border: none;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}
+
+.finder-container-label {
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}
+
+.finder-container {
+    width: 300px;
+}
+
+.card {
+    min-height: 350px;
+    width: 290px;
+    box-shadow: 0 0 3px 1px #d90268;
+}
+
+.price {
+    padding: 0 0.2rem;
+    /* border: 1px solid #d90268; */
+    border-radius: 5px;
+    background-color: #f9a826;
+    font-family: 'Genos', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #f9a826;
+    border-color: #f9a826;
+}
+
+.btn-outline-secondary {
+    border-radius: 25px;
+    font-size: 1.1rem;
+    background-color: #d50267;
+    color: #e9e8e8;
+}
+
+main .card img {
+    object-fit: cover;
+    width: auto;
+    height: 200px;
+}
+
+/* CONTACT CSS */
+
+.form-control{
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}
+
+/* .h-form-contact{
+    min-height: 350px;
+    height: calc(65vh - 96px);
+} */
+
+.btn-dark-per{
+    font-family: 'Genos', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e9e8e8;
+    background-color: #d50267;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}
+
+
+/* DETAIL CSS */
+
+.container-detail {
+    border: 1px solid #d90268;
+    border-radius: 25px;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}	
+
+.img-card-detail {
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+}
+
+.container-img-detail{
+    border-radius: 25px 0 0 25px;
+    width: 50%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .img-card-detail {
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+    }
+    
+    .container-img-detail{
+        border-radius: 25px 25px 0 0;
+        width: 100%;
+    }
+}
+
+
+/* STATS CSS */

@@ -1,0 +1,18 @@
+footer{
+    box-shadow: inset 0 -0.1rem 0.1rem  0.1rem  #d90268;
+    -moz-box-shadow: inset 0 -0.1rem 0.1rem  0.1rem  #d90268;
+    -webkit-box-shadow: inset 0 -0.1rem 0.1rem  0.1rem  #d90268;
+}
+
+.social-icon{
+    color: #E9E8E8;
+    cursor: pointer;
+}
+
+.social-icon:hover{
+    color: #f9a826;
+}
+
+.social-icon:active{
+    transform: scale(0.9);
+}
