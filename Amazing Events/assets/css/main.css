@@ -39,10 +39,10 @@
 
 /* HOME AND UPCOMING EVENTS CSS */
 
-.form-control:focus, #inputFinder:focus {
+.form-control:focus,
+#inputFinder:focus {
     box-shadow: 0 0 0 0.2rem #f9a826;
 }
-
 
 #inputFinder {
     border: none;
@@ -59,48 +59,141 @@
     width: 300px;
 }
 
-.card {
-    min-height: 350px;
+.card-alt {
+    min-height: 400px;
     width: 290px;
-    box-shadow: 0 0 3px 1px #d90268;
+    box-shadow: 0 0.2rem 0 0.2rem #913175;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.card-alt:hover {
+    box-shadow: 0 0.2rem 0 0.2rem #f9a826;
+}
+
+.card-alt p {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    position: absolute;
+    padding: 0 1rem;
+    bottom: 15px;
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+    max-height: 120px;
+    line-break: anywhere;
 }
 
 .price {
     padding: 0 0.2rem;
-    /* border: 1px solid #d90268; */
     border-radius: 5px;
     background-color: #f9a826;
     font-family: 'Genos', sans-serif;
     color: #fff;
-    font-size: 1.2rem;
     font-weight: 600;
+    font-size: 1.3rem;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-90px) translateY(-10px) rotate(45deg);
+    /* width: 300px; */
 }
 
-.btn-outline-secondary:hover {
-    color: #fff;
+.card-alt button {
+    /* position: absolute; */
+    /* border-radius: 25px; */
+    position: relative;
+    font-size: 1.3rem;
+    /* background-color: #d50267; */
+    color: #e9e8e8;
+    transition: all 0.5s ease-in-out;
+    rotate: 45deg;
+}
+
+.card-alt button:hover {
     background-color: #f9a826;
-    border-color: #f9a826;
-}
-
-.btn-outline-secondary {
-    border-radius: 25px;
-    font-size: 1.1rem;
-    background-color: #d50267;
     color: #e9e8e8;
 }
 
-main .card img {
+
+main .card-alt img {
     object-fit: cover;
     width: auto;
     height: 200px;
 }
 
+.card-alt .card-body{
+    background: #20262e;
+}
+
+.card-alt p:first-of-type:first-letter {
+    font-size: 1.8em;
+    font-family: Georgia, Times, serif;
+    margin-right: 0.05em;
+}
+
+.card-alt .con-card-footer {
+    position: absolute;
+    background: transparent;
+    /* height: auto; */
+    width: 100%;
+}
+
+.icon-card{
+    position: absolute;
+    bottom: 45%;
+    left: 45%;
+    color: #f9a826;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.card-alt .con-card-footer::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: -95px;
+    left: -30%;
+    width: 150%;
+    background-image: linear-gradient(to top, #913175, #d50266);
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.card-alt:hover .con-card-footer::after{
+    transform: translateY(145px);
+    transition: all 0.5s ease;
+}
+
+.card-alt:hover .icon-card{
+    transform: translateY(150px) rotate(180deg);
+    transition: all 0.5s ease;
+}
+
+.card-alt:hover p{
+    transform: translateY(150px);
+    transition: all 0.5s ease;
+}
+
+.card-alt:hover button{
+    transform: translateX(-90px) rotate(-45deg) translateY(10px);
+    transition: all 0.5s ease-in-out;
+}
+
+.card-alt:hover .price{
+    transform: translateX(76px);
+    transition: all 0.5s ease-in-out;
+}
+
+
+
 /* CONTACT CSS */
 
-.form-control{
+.form-control {
     border: none;
     border-radius: 25px;
     box-shadow: 0 0.2rem 0 0.2rem #d90268;
+    font-size: 1.2rem;
 }
 
 /* .h-form-contact{
@@ -108,17 +201,21 @@ main .card img {
     height: calc(65vh - 96px);
 } */
 
-.btn-dark-per{
+.btn-dark-per {
     font-family: 'Genos', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: #e9e8e8;
-    background-color: #d50267;
+    background-color: #913175;
     border: none;
     border-radius: 25px;
     box-shadow: 0 0.2rem 0 0.2rem #d90268;
 }
 
+.btn-dark-per:hover {
+    background-color: #f9a826;
+    color: #20262e;
+}
 
 /* DETAIL CSS */
 
@@ -126,7 +223,7 @@ main .card img {
     border: 1px solid #d90268;
     border-radius: 25px;
     box-shadow: 0 0.2rem 0 0.2rem #d90268;
-}	
+}
 
 .img-card-detail {
     object-fit: cover;
@@ -134,7 +231,7 @@ main .card img {
     height: 100%;
 }
 
-.container-img-detail{
+.container-img-detail {
     border-radius: 25px 0 0 25px;
     width: 50%;
     overflow: hidden;
@@ -146,8 +243,8 @@ main .card img {
         width: auto;
         height: 100%;
     }
-    
-    .container-img-detail{
+
+    .container-img-detail {
         border-radius: 25px 25px 0 0;
         width: 100%;
     }
@@ -155,3 +252,35 @@ main .card img {
 
 
 /* STATS CSS */
+
+.stats {
+    background-color: #d50267;
+    color: #e9e8e8;
+    font-family: 'Genos', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 0.2rem 0 0.2rem #913175;
+    overflow: hidden;
+    text-align: center;
+}
+
+.stats tr th {
+    padding: 0.3rem 0;
+    background-color: #20262e;
+}
+
+.stats tr td {
+    padding: 0.3rem 0;
+    border-top: 2px solid #fff;
+}
+
+.stats tr td:nth-child(even) {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.stats tr td:hover {
+    background-color: #f9a826;
+    color: #20262e;
+}
