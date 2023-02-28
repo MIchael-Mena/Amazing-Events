@@ -30,7 +30,7 @@ header .navbar{
 footer{
     top: 10vh;
     position: relative;
-    min-height: 110px;
+    min-height: 120px;
     height: 15vh;
     width: 100%;
 }
