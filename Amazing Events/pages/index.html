@@ -63,7 +63,7 @@
 
         <div class="container h-100 pt-3 pb-5">
 
-            <form
+            <form 
                 class="d-inline-flex justify-content-md-between align-items-center w-100 my-md-4 my-1 flex-wrap flex-md-nowrap justify-content-center">
                 <div class="d-flex justify-content-center flex-wrap ">
                     <div class="form-check form-check-inline">
@@ -111,14 +111,44 @@
             </form>
 
 
-            <div
+            <div id="events-container"
                 class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center align-items-center h-100 my-md-1 m-0 row-gap-3">
 
-                <div class="col d-inline-flex justify-content-center">
+                <script src="../scripts/data.js"></script>
+                <script>
+                    const events = data.events;
+                    document.getElementById("events-container").innerHTML = `
+                    ${events.map(event => `
+                        <div class="col d-inline-flex justify-content-center" >
+                            <div class="card card-alt">
+                                <img src="${event.image}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- Eliminar flex y usar posiciones absolutas -->
+                                    <div class="d-flex justify-content-between align-items-center pt-5">
+                                        <span class="price">Price $${event.price}</span>
+                                        <button type="button" class="btn btn-sm " onclick="showDetail('${event["_id"]}')">
+                                            See more...
+                                        </button>
+                                    </div>
+                                    <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
+                                    <p class="card-text">
+                                        ${event.description}
+                                    </p>
+                                    <div class="con-card-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                    `
+                </script>
+
+                <!-- Eliminar flex y usar posiciones absolutas en price and see more -->
+                <!--                 <div class="col d-inline-flex justify-content-center">
                     <div class="card card-alt">
                         <img src="../assets/images/events/Cinema.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <!-- Eliminar flex y usar posiciones absolutas -->
+                            
                             <div class="d-flex justify-content-between align-items-center pt-5">
                                 <span class="price">Price $0000</span>
                                 <button type="button" class="btn btn-sm " onclick="showDetail()">
@@ -134,113 +164,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Costume_Party.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Food_Fair.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Marathon.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- Eliminar flex y usar posiciones absolutas -->
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Museum_Tour.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Music_Concert.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -274,8 +198,10 @@
     <script src="../scripts/toggleFinder.js">
     </script>
     <script>
-        function showDetail() {
-            window.open("details.html", '_self');
+        function showDetail(id) {
+            // window.open("details.html", '_self');
+            window.location.href = "details.html?id=" + id;
+            // window.location.href = "details.html";
         }
     </script>
 </body>

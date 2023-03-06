@@ -56,14 +56,46 @@
     <main class="bg-light-per d-flex flex-wrap">
 
         <div class="container pt-3 pb-5 ">
-            <div class="row my-md-1 m-0 container-detail h-100 w-100 p-3">
-                <div class="col-md-6 container-img-detail p-0">
+            <div class="row my-md-1 m-0 container-detail h-100 w-100 p-md-3 p-2" id="event-detail">
+
+                <script src="../scripts/data.js"></script>
+    
+                <script>
+                    const parameters = new URL(location.href);
+                    const id = parameters.searchParams.get("id");
+                    const event = data.events.find((event) => event["_id"] == id);
+                    const [year, month, day] = event.date.split("-");
+                    const [yearCurrent, monthCurrent, dayCurrent] = data.currentDate.split("-")
+                    let eventIsActive = new Date(year, month, day) > new Date(yearCurrent, monthCurrent, dayCurrent);
+                    let classEventIsActive = eventIsActive ? "badge bg-primary" : "badge bg-danger";
+
+                    document.getElementById("event-detail").innerHTML = `
+                    <div class="col-md-6 container-img-detail p-0">
+                        <img src="${event.image}" class="img-card-detail"alt="Event-1">
+                    </div>
+                    <div class="col-md-6 ps-md-4 d-flex justify-content-center gap-lg-5 gap-md-3 gap-2 flex-column">
+                        <h1>${event.name}</h1>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p>Date: ${event.date}</p>
+                            <p class="${classEventIsActive}">${eventIsActive ? "Active" : "Inactive"}</p>
+                        </div>
+                        <p>${event.description}</p>
+                        <p>Place: ${event.place}</p>
+                        <p>Capacity: ${event.capacity}</p>
+                        <p>${event?.estimate | event?.assistance}</p>
+                        <p>Price $${event.price}</p
+                    </div>
+                    `;
+                </script>
+
+<!--                 <div class="col-md-6 container-img-detail p-0">
                     <img src="../assets/images/Events/Cinema.jpg" class="img-card-detail"alt="Event-1">
                 </div>
                 <div class="col-md-6">
                     <h1>Event 1</h1>
                     <p>Description</p>
-                </div>
+                </div> -->
+
             </div>
         </div>
 
