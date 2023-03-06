@@ -36,8 +36,12 @@
     transform: scale(0.9);
 }
 
+.form-check-input, .form-check-label{
+    cursor: pointer;
+}
 
-/* HOME AND UPCOMING EVENTS CSS */
+/* HOME, UPCOMING EVENTS AND PAST EVENTS CSS */
+
 
 .form-control:focus,
 #inputFinder:focus {
