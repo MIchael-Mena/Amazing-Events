@@ -1,4 +1,13 @@
 var data = {
+    "categories": [
+        "Food Fair",
+        "Museum",
+        "Costume Party",
+        "Music Concert",
+        "Race",
+        "Cinema",
+        "Box Exchange",
+        ],
     "currentDate": "2022-01-01",
     "events": [
       {

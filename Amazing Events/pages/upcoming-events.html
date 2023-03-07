@@ -31,10 +31,10 @@
                     <ul
                         class="navbar-nav d-inline-flex d-md-flex align-items-end align-items-md-center w-100 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link active text-uppercase" href="index.html">home</a>
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">upcoming Events</a>
+                            <a class="nav-link active text-uppercase" href="#">upcoming Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-uppercase" href="past-event.html">past events</a>
@@ -54,47 +54,22 @@
 
     <main class="bg-light-per">
 
+        <script src="../scripts/data.js"></script>
+
         <div class="d-flex justify-content-evenly align-items-center py-3 nav-arrow w-100">
-            <i class="fa-solid fa-chevron-left fa-2xl arrow"></i>
+            <i class="fa-solid fa-chevron-left fa-2xl arrow-active"></i>
             <h1 class="main-title">Upcoming Events</h1>
-            <i class="fa-solid fa-chevron-right fa-2xl arrow"></i>
+            <i class="fa-solid fa-chevron-right fa-2xl arrow-active"></i>
         </div>
 
         <div class="container h-100 pt-3 pb-5">
 
             <form
                 class="d-inline-flex justify-content-md-between align-items-center w-100 my-md-4 my-1 flex-wrap flex-md-nowrap justify-content-center">
-                <div class="d-flex justify-content-center flex-wrap ">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="CategoryFirst" checked>
-                        <label class="form-check-label" for="CategoryFirst">
-                            Category
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="CategorySecond" name="category">
-                        <label class="form-check-label" for="CategorySecond">
-                            Category
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="CategoryThird" name="category">
-                        <label class="form-check-label" for="CategoryThird">
-                            Category
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="CategoryFourth" name="category">
-                        <label class="form-check-label" for="CategoryFourth">
-                            Category
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="CategoryFifth" name="category">
-                        <label class="form-check-label" for="CategoryFifth">
-                            Category
-                        </label>
-                    </div>
+                <div class="d-flex justify-content-center flex-wrap" id="event-category">
+
+                    <script src="../scripts/categoryCheckbox.js"></script>
+
                 </div>
                 <div class="input-group finder-container my-3 my-md-0">
                     <input type="text" class="form-control" placeholder="Find an event" aria-label="Finder"
@@ -110,31 +85,11 @@
             </form>
 
 
-            <div
+            <div id="events-container"
                 class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center align-items-center h-100 my-md-1 m-0 row-gap-3">
 
-                <div class="col d-inline-flex justify-content-center">
-                    <div class="card card-alt">
-                        <img src="../assets/images/events/Cinema.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- Eliminar flex y usar posiciones absolutas -->
-                            <div class="d-flex justify-content-between align-items-center pt-5">
-                                <span class="price">Price $0000</span>
-                                <button type="button" class="btn btn-sm " onclick="showDetail()">
-                                    See more...
-                                </button>
-                            </div>
-                            <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <div class="con-card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <script src="../scripts/cardDisplayUtilities.js"></script>
+                <script src="../scripts/showCardUpcomingEvents.js"></script>
 
             </div>
 
@@ -148,7 +103,7 @@
                 <i class="fa-brands fa-whatsapp fa-3x mx-2 social-icon"></i>
             </div>
             <div>
-                Comming soon...
+                Coming soon...
             </div>
             <p class="mb-1">
                 <a href="#"
@@ -164,13 +119,8 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
     <script src="https://kit.fontawesome.com/e1b7ae46e3.js" crossorigin="anonymous"></script>
-    <script src="../scripts/toggleFinder.js">
-    </script>
-    <script>
-        function showDetail() {
-            window.open("details.html", '_self');
-        }
-    </script>
+    <script src="../scripts/toggleFinder.js"></script>
+    <script src="../scripts/showDetail.js"></script>
 </body>
 
 </html>

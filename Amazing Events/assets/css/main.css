@@ -23,16 +23,16 @@
     border-color: #913175;
 }
 
-.arrow {
+.arrow-active {
     color: #E9E8E8;
     cursor: pointer;
 }
 
-.arrow:hover {
+.arrow-active:hover {
     color: #f9a826;
 }
 
-.arrow:active {
+.arrow-active:active {
     transform: scale(0.9);
 }
 
@@ -40,8 +40,18 @@
     cursor: pointer;
 }
 
+.description:first-of-type:first-letter {
+    font-size: 1.8em;
+    font-family: Georgia, Times, serif;
+    margin-right: 0.05em;
+}
+
+
 /* HOME, UPCOMING EVENTS AND PAST EVENTS CSS */
 
+.card-alt .card-img-top{
+    border-bottom: 1px solid white;
+}
 
 .form-control:focus,
 #inputFinder:focus {
@@ -130,12 +140,6 @@ main .card-alt img {
     background: #20262e;
 }
 
-.card-alt p:first-of-type:first-letter {
-    font-size: 1.8em;
-    font-family: Georgia, Times, serif;
-    margin-right: 0.05em;
-}
-
 .card-alt .con-card-footer {
     position: absolute;
     background: transparent;
@@ -162,6 +166,7 @@ main .card-alt img {
     width: 150%;
     background-image: linear-gradient(to top, #913175, #d50266);
     height: 200px;
+    /*border: 1px solid white;*/
     transition: all 0.5s ease;
 }
 
@@ -190,9 +195,17 @@ main .card-alt img {
     transition: all 0.5s ease-in-out;
 }
 
-
-
 /* CONTACT CSS */
+
+.date-active{
+    border-left: 15px solid #0d6efd;
+    text-indent: 5px;
+}
+
+.date-inactive{
+    border-left: 15px solid #dc3545;
+    text-indent: 5px;
+}
 
 .form-control {
     border: none;
@@ -224,6 +237,47 @@ main .card-alt img {
 
 /* DETAIL CSS */
 
+.arrow-back{
+    z-index: 10;
+    position: fixed;
+    top: 45%;
+    right: 5%;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 25px 0 25px;
+    box-shadow: 0 0.2rem 0 0.2rem rgba(0, 0, 0, 0.2);;
+    cursor: pointer;
+}
+
+.arrow-back:hover{
+    background-color: #f9a826;
+    color: #20262e;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+}
+
+.arrow-back:active{
+    transform: translateY(2px);
+}
+
+.price-detail{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #f9a826;
+    box-shadow: 0 0.1rem 0.3rem 0.1rem #20262e;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.detail{
+    border-top: 2px solid #913175;
+    border-bottom: 5px solid #913175;
+    border-right: 4px solid #913175;
+    border-radius: 0 25px 25px 0;
+    overflow: hidden;
+}
+
 .container-detail {
     border: 1px solid #d90268;
     border-radius: 25px;
@@ -233,12 +287,9 @@ main .card-alt img {
 #event-detail h1{
     font-weight: 600;
     text-align: center;
-    /* color: #d90268; */
     color: #fff;
-    /*background-image: linear-gradient(to top, #913175, #d50266);*/
     background-image: linear-gradient(to top, #913175, #d50266);
-    box-shadow: 0 0.1rem 0 0.1rem #20262e;
-    /*box-shadow: 0 0.2rem 0 0.2rem #20262e;*/
+    box-shadow: 0 0.1rem 0.3rem 0.1rem #20262e;
 }
 
 .img-card-detail {
@@ -247,10 +298,13 @@ main .card-alt img {
     height: 100%;
 }
 
-.container-img-detail {
+.img-detail {
     border-radius: 25px 0 0 25px;
     width: 50%;
     overflow: hidden;
+    box-shadow: 10px 0 5px -9px #20262e;
+    z-index: 1;
+    border: 2px solid #20262e;
 }
 
 #event-detail p{
@@ -258,11 +312,30 @@ main .card-alt img {
     font-size: 1.4rem;
 }
 
+#event-detail label{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
 @media (max-width: 768px) {
 
-    .container-img-detail {
+    .img-detail {
         border-radius: 25px 25px 0 0;
         width: 100%;
+        box-shadow: none;
+        /*box-shadow: 0 10px 20px -3px #888;*/
+    }
+
+    .detail{
+        border-top: 0;
+        border-bottom: 3px solid #913175;
+        border-right: 3px solid #913175;
+        border-left: 3px solid #913175;
+        border-radius: 0 0 25px 25px;
+    }
+
+    #event-detail h1{
+        border-radius: 0;
     }
 
 }
@@ -271,6 +344,10 @@ main .card-alt img {
 
     #event-detail p{
         font-size: 1.2rem;
+    }
+
+    #event-detail label{
+        font-size: 1.3rem;
     }
 }
 
