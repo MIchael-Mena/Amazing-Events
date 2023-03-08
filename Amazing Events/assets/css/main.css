@@ -17,10 +17,6 @@
     box-shadow: 0 0 0 0.2rem #f9a826;
 }
 
-.form-check:hover .form-check-label {
-    font-weight: 600;
-}
-
 .form-check-input:focus {
     border: none;
     box-shadow: 0 0 0 0.2rem #f9a826;
