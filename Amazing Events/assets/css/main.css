@@ -24,7 +24,7 @@
 }
 
 .arrow-active {
-    color: #E9E8E8;
+    color: white;
     cursor: pointer;
 }
 
@@ -49,6 +49,11 @@
 
 /* HOME, UPCOMING EVENTS AND PAST EVENTS CSS */
 
+.arrow-disabled {
+    color: #b7b7b7;
+    cursor: not-allowed;
+}
+
 .card-alt .card-img-top{
     border-bottom: 1px solid white;
 }
@@ -65,8 +70,26 @@
 }
 
 .finder-container-label {
+    cursor: pointer;
     border-radius: 0 25px 25px 0;
     box-shadow: 0 0.2rem 0 0.2rem #d90268;
+    background-color:#20262e;
+}
+
+.finder{
+    color: white;
+}
+
+.finder-container-label:hover{
+    background-color: #f9a826;
+}
+
+.finder-container-label:hover .finder {
+    color: #20262e;
+}
+
+.finder-container-label:active{
+    transform: scale(0.9);
 }
 
 .finder-container {

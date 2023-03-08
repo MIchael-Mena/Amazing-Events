@@ -1,4 +1,4 @@
-var data = {
+const data = {
     "categories": [
         "Food Fair",
         "Museum",
@@ -6,7 +6,7 @@ var data = {
         "Music Concert",
         "Race",
         "Cinema",
-        "Box Exchange",
+        "Book Exchange",
         ],
     "currentDate": "2022-01-01",
     "events": [
