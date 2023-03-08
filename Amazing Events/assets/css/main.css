@@ -13,6 +13,14 @@
     text-shadow: 0 0.1rem 0.1rem #000;
 }
 
+.form-check:hover .form-check-input {
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+.form-check:hover .form-check-label {
+    font-weight: 600;
+}
+
 .form-check-input:focus {
     border: none;
     box-shadow: 0 0 0 0.2rem #f9a826;
@@ -38,6 +46,7 @@
 
 .form-check-input, .form-check-label{
     cursor: pointer;
+    font-weight: 500;
 }
 
 .description:first-of-type:first-letter {
@@ -46,16 +55,41 @@
     margin-right: 0.05em;
 }
 
+.not-found {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0.1rem 0.1rem #000;
+}
+
 
 /* HOME, UPCOMING EVENTS AND PAST EVENTS CSS */
+
+main .card-alt img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
 
 .arrow-disabled {
     color: #b7b7b7;
     cursor: not-allowed;
 }
 
-.card-alt .card-img-top{
+.card-alt .card-img{
+    width: auto;
+    height: 200px;
     border-bottom: 1px solid white;
+    overflow: hidden;
+}
+
+main .card-alt img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+/*    width: auto;
+    height: 200px;*/
 }
 
 .form-control:focus,
@@ -153,12 +187,6 @@
 }
 
 
-main .card-alt img {
-    object-fit: cover;
-    width: auto;
-    height: 200px;
-}
-
 .card-alt .card-body{
     background: #20262e;
 }
@@ -237,11 +265,6 @@ main .card-alt img {
     font-size: 1.2rem;
 }
 
-/* .h-form-contact{
-    min-height: 350px;
-    height: calc(65vh - 96px);
-} */
-
 .btn-dark-per {
     font-family: 'Genos', sans-serif;
     font-size: 1.2rem;
@@ -319,6 +342,12 @@ main .card-alt img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transition: all 0.5s ease;
+}
+
+.img-card-detail:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
 }
 
 .img-detail {

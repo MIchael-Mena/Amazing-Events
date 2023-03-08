@@ -17,7 +17,7 @@ const setAnValueToFind = () => {
     const finder = document.getElementById("inputFinder")
     const eventToFind = finder.value;
     const valueToFind = eventToFind.trim();
-    window.location.href = window.location.pathname + "?" + "finder=" + valueToFind;
+    window.location.href = window.location.pathname + "?" + "find=" + valueToFind;
 }
 
 const finderLabel = document.getElementById("finderContainerLabel");

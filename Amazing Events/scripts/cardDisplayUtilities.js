@@ -4,10 +4,8 @@ const currentDate = new Date(yearCurrent, monthCurrent, dayCurrent);
 const notFound = `
     <div class="col d-inline-flex justify-content-center" >
         <div class="card card-alt">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center pt-5">
-                    <span class="price">No events found</span>
-                </div>
+            <div class="card-body text-center">
+                <span class="not-found">No events found</span>
             </div>
         </div>
     </div>
@@ -16,7 +14,9 @@ const notFound = `
 const card = (event) => `
                         <div class="col d-inline-flex justify-content-center" >
                             <div class="card card-alt">
-                                <img src="${event.image}" class="card-img-top" alt="...">
+                                <div class="card-img">
+                                    <img src="${event.image}" class="card-img-top" alt="...">                          
+                                </div>
                                 <div class="card-body">
                                     <!-- Eliminar flex y usar posiciones absolutas -->
                                     <div class="d-flex justify-content-between align-items-center pt-5">
@@ -52,22 +52,22 @@ const filterCategories = (event) => {
 }
 
 const getFinderParameter = () => {
-    return new URLSearchParams(window.location.search).get("finder");
+    return new URLSearchParams(window.location.search).get("find");
 }
-const findAnEvent = () => {
-    const valueToFound = getFinderParameter();
-    const eventFound = data.events.find(event => event.name.toLowerCase().includes(valueToFound.toLowerCase()))
-    if(eventFound){
-        return card(eventFound);
-    }else{
-        return notFound;
+const findAnEvent = (event, valueToFound) => {
+    if(valueToFound) {
+        return event.name.toLowerCase().includes(valueToFound.toLowerCase());
+    } else {
+        return true;
     }
 }
 
-const filerCards = (data, functionForCompare) => {
+
+const filterCards = (data, functionForCompare) => {
+    const valueToFound = getFinderParameter();
     return  `
                 ${data.events.map(event => {
-                    if( comparateDate(event, functionForCompare) && filterCategories(event) ){
+                    if( comparateDate(event, functionForCompare) && findAnEvent(event,valueToFound) && filterCategories(event) ){
                         return card(event)
                     }
                     return ""
@@ -77,12 +77,10 @@ const filerCards = (data, functionForCompare) => {
 }
 
 const showCard = (data, functionForCompare) => {
-    let cardToSee = '';
-    console.log(getFinderParameter())
-    if(getFinderParameter()){
-        cardToSee = findAnEvent();
-    } else {
-        cardToSee = filerCards(data, functionForCompare);
+    let cardsToShow = '';
+    cardsToShow = filterCards(data, functionForCompare);
+    if(cardsToShow.trim() === ''){
+        cardsToShow = notFound;
     }
-    document.getElementById("events-container").innerHTML = cardToSee;
+    document.getElementById("events-container").innerHTML = cardsToShow;
 }
