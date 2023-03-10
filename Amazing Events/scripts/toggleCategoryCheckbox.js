@@ -11,7 +11,7 @@ const inputCheckboxes = (id, value) =>`
 const showCategories = () =>{
                     document.getElementById("event-category").innerHTML = `
                     ${data.categories.map(category => 
-                    // replace(/\s+/g, '') remuevo los espacios en blanco
+                    // replace(/\s+/g, '') remuevo los espacios en blanco para el id
                         inputCheckboxes(category.replace(/\s+/g, ''), category) 
                     ).join('')}
                     `;
@@ -20,81 +20,76 @@ const setupQuery = ()=> {
     const categories = document.getElementsByName("category");
     categories.forEach(category => {
         category.addEventListener('change', () => {
-            let [categoriesParam, parameters, categoryWithoutSpaces, categoryValue] = prepareParameters(category);
-            if(categoriesParam.length === 0) {
-                addAllCategoriesToQuery(categoryValue);
-            }else if(!categoriesParam.includes(categoryValue) && category.checked) {
-                addCategoryToQuery(categoryWithoutSpaces, categoriesParam, parameters);
-            } else if(categoriesParam.includes(categoryValue) && !category.checked) {
-                removeCategoryFromQuery(categoryWithoutSpaces, categoriesParam, parameters);
+            const categoryValue = category.value;
+            let [currentCategoriesInQuery, currentQuery] = getQuery();
+            if(currentCategoriesInQuery.length === 0) {
+                addAllCategoriesToQuery(categoryValue, currentQuery);
+            }else if(!currentCategoriesInQuery.includes(categoryValue) && category.checked) {
+                addCategoryToQuery(currentCategoriesInQuery, currentQuery, categoryValue);
+            } else if(currentCategoriesInQuery.includes(categoryValue) && !category.checked) {
+                removeCategoryFromQuery(currentCategoriesInQuery, currentQuery, categoryValue);
             }
+            window.location.href = window.location.pathname + "?" + currentQuery.toString();
         });
     });
 }
 
 const markCategories = () => {
-    const [categoriesParam, params] = getCategoryParameter();
-    if(categoriesParam.length === 0) {
+    const [currentCategoriesInQuery] = getQuery();
+    if(currentCategoriesInQuery.length === 0) {
         // Inicialmente, no hay categorías en la URL. Se marcan todas las categorías
         markCheckbox((category) => true);
     } else {
         // Se marcan las categorías que están en la query de la URL
-        markCheckbox((category) => categoriesParam.includes(category));
+        markCheckbox((category) => currentCategoriesInQuery.includes(category));
     }
 }
 
-
-function prepareParameters(category) {
-    const [categoriesParam, params] = getCategoryParameter();
-    // Le agrega un + en los espacios en blanco, params es un objeto
-    // agrego el & para que se pueda concatenar con el resto de los parámetros
-    let parameters = '&'+params.toString();
-    let categoryWithoutSpaces = category.value.replace(' ', '+');
-    let categoryValue = category.value;
-    return [categoriesParam, parameters, categoryWithoutSpaces, categoryValue];
-}
-
-function addAllCategoriesToQuery(categoryValue) {
+function addAllCategoriesToQuery(categoryValue, currentQuery) {
     // Se ejecuta solo la primera vez que se selecciona una categoría
-    // inicialmente se marcan todas las categorías
-    let parameters = "";
-    data.categories.forEach((category, index) => {
+    // inicialmente se marcan todas las categorías menos la que se seleccionó
+    data.categories.forEach((category) => {
         if(category !== categoryValue) {
-            parameters += "&category=" + category.replace(' ', '+');
+            currentQuery.append('category', category);
         }
     });
-    window.location.href = window.location.pathname + "?" + parameters;
 }
 
-function addCategoryToQuery(categoryWithoutSpaces, categoriesParam, parameters) {
-    if(categoriesParam.length === 1 && categoriesParam[0] === "none") {
-        parameters = "";
+function addCategoryToQuery(currentCategoriesInQuery, currentQuery, categoryValue) {
+    if(currentCategoriesInQuery.length === 1 && currentCategoriesInQuery[0] === "none") {
+        // Elimino el parámetro category=none
+        currentQuery.delete('category');
     }
-    window.location.href = window.location.pathname + "?" + parameters + "&category=" + categoryWithoutSpaces;
+    currentQuery.append('category', categoryValue);
 }
 
-function removeCategoryFromQuery(categoryWithoutSpaces, categoriesParam, parameters) {
-    if(categoriesParam.length === 1) {
-        parameters = "&category=none"
+function removeCategoryFromQuery(currentCategoriesInQuery, currentQuery, categoryValue) {
+    currentQuery.delete('category');
+    if(currentCategoriesInQuery.length === 1) {
+        currentQuery.append("category", "none");
     } else {
-        parameters = parameters.replace("&category=" + categoryWithoutSpaces, "");
+        currentCategoriesInQuery.forEach((category) => {
+            if(category !== categoryValue) {
+                currentQuery.append("category", category);
+            }
+        });
     }
-    window.location.href = window.location.pathname + "?" + parameters;
 }
 
-function getCategoryParameter() {
-    const params = new URLSearchParams(window.location.search);
+function getQuery() {
+    // Me devuelve un objeto con los parámetros y sus valores
+    let currentQuery = new URLSearchParams(window.location.search);
     // Me devuelve un array con los valores de los parámetros (incluyendo los espacios en blanco)
-    const categoriesParam = params.getAll("category");
-    return [categoriesParam, params];
+    let currentCategoriesInQuery = currentQuery.getAll("category");
+    return [currentCategoriesInQuery, currentQuery];
 }
 
 
 
-function markCheckbox(condition) {
+function markCheckbox(categoryInQueryIncludes) {
     const categories = document.getElementsByName("category");
     categories.forEach(category => {
-        if(condition(category.value)) {
+        if(categoryInQueryIncludes(category.value)) {
             category.checked = true;
         }
     });

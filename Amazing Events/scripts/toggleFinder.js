@@ -1,6 +1,6 @@
 
 
-const addEventToInput = () => {
+const addEventToFinder = () => {
     const finder = document.getElementById("finderContainerLabel")
     const inputFinder = document.getElementById("inputFinder")
     finder.addEventListener("click", () => {
@@ -17,7 +17,9 @@ const setAnValueToFind = () => {
     const finder = document.getElementById("inputFinder")
     const eventToFind = finder.value;
     const valueToFind = eventToFind.trim();
-    window.location.href = window.location.pathname + "?" + "find=" + valueToFind;
+    const params = new URLSearchParams(window.location.search);
+    params.set("find", valueToFind);
+    window.location.href = window.location.pathname + "?" + params.toString();
 }
 
 const finderLabel = document.getElementById("finderContainerLabel");
@@ -28,4 +30,4 @@ const focusLabel = () => {
         finderLabel.style.boxShadow = "0 0 0 0.2rem #f9a826";
 }
 
-addEventToInput()
+addEventToFinder()

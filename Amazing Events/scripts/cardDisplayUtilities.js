@@ -43,7 +43,7 @@ const comparateDate = (event, functionForCompare) => {
 }
 
 const filterCategories = (event) => {
-    const [categoriesParam] = getCategoryParameter()
+    const [categoriesParam] = getQuery()
     if(categoriesParam.length === 0){
         return true;
     } else {
@@ -67,7 +67,9 @@ const filterCards = (data, functionForCompare) => {
     const valueToFound = getFinderParameter();
     return  `
                 ${data.events.map(event => {
-                    if( comparateDate(event, functionForCompare) && findAnEvent(event,valueToFound) && filterCategories(event) ){
+                    if( comparateDate(event, functionForCompare) 
+                        && findAnEvent(event,valueToFound) 
+                        && filterCategories(event) ){
                         return card(event)
                     }
                     return ""
