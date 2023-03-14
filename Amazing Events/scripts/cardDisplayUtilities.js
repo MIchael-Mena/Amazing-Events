@@ -17,19 +17,22 @@ const card = (event) => `
                                 <div class="card-img">
                                     <img src="${event.image}" class="card-img-top" alt="...">                          
                                 </div>
+                                <h3 class="card-title">${event.name}</h3>
                                 <div class="card-body">
                                     <!-- Eliminar flex y usar posiciones absolutas -->
-                                    <div class="d-flex justify-content-between align-items-center pt-5">
-                                        <span class="price">Price $${event.price}</span>
-                                        <button type="button" class="btn btn-sm " onclick="showDetail('${event["_id"]}')">
+                                    <!--<div class="d-flex justify-content-between align-items-center pt-5">
+                                    </div>-->
+                                    <span class="card-price card-data-style">Price $${event.price}</span>
+                                    <button type="button" class="btn btn-sm " onclick="showDetail('${event["_id"]}')">
                                             See more...
-                                        </button>
-                                    </div>
+                                    </button>
+                                    <span class="card-date card-data-style">${event.date}</span>
                                     <i class="fa-solid fa-circle-chevron-down fa-2x icon-card"></i>
+
                                     <p class="card-text description">
                                         ${event.description}
                                     </p>
-                                    <div class="con-card-footer">
+                                    <div class="con-toggle-shrink">
                                     </div>
                                 </div>
                             </div>

@@ -77,6 +77,7 @@ main .card-alt img:hover {
     height: 200px;
     border-bottom: 1px solid white;
     overflow: hidden;
+    z-index: 10;
 }
 
 main .card-alt img {
@@ -146,40 +147,54 @@ main .card-alt img {
     padding: 0 1.5rem;
     top: 60%;
     left: 0;
-    z-index: 1;
+    z-index: 20;
     transition: all 0.5s ease;
     max-height: 120px;
     /* line-break: anywhere; */
 }
 
-.price {
+.card-price {
+    position: absolute;
+    top: 68%;
+    left: -20%;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-100px)  rotate(45deg);
+}
+
+.card-data-style{
     display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 0 0.2rem;
     border-radius: 5px;
     background-color: #f9a826;
-    color: #fff;
+    color: black;
     font-weight: 600;
     font-size: 1.3rem;
-    transition: all 0.5s ease-in-out;
-    transform: translateX(-90px) translateY(-10px) rotate(45deg);
     min-width: 120px;
+    border: 2px solid white;
+}
+
+.card-date{
+    position: absolute;
+    top: 68%;
+    right: -20%;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(100px)  rotate(-45deg);
 }
 
 .card-alt button {
-    /* position: absolute; */
-    /* border-radius: 25px; */
-    position: relative;
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 50px);
     font-size: 1.3rem;
-    /* background-color: #d50267; */
     color: #e9e8e8;
     transition: all 0.5s ease-in-out;
-    rotate: 45deg;
+    font-weight: 500;
 }
 
 .card-alt button:hover {
     background-color: #f9a826;
-    color: #e9e8e8;
+    color: black;
 }
 
 
@@ -187,10 +202,9 @@ main .card-alt img {
     background: #20262e;
 }
 
-.card-alt .con-card-footer {
+.card-alt .con-toggle-shrink {
     position: absolute;
     background: transparent;
-    /* height: auto; */
     width: 100%;
 }
 
@@ -199,25 +213,25 @@ main .card-alt img {
     bottom: 45%;
     left: 45%;
     color: #f9a826;
-    z-index: 10;
+    z-index: 16;
     transition: all 0.5s ease;
 }
 
-.card-alt .con-card-footer::after {
+.card-alt .con-toggle-shrink::after {
     content: '';
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
     position: absolute;
-    bottom: -95px;
+    bottom: -185px;
     left: -30%;
     width: 150%;
     background-image: linear-gradient(to top, #913175, #d50266);
     height: 200px;
-    /*border: 1px solid white;*/
     transition: all 0.5s ease;
+    z-index: 15;
 }
 
-.card-alt:hover .con-card-footer::after{
+.card-alt:hover .con-toggle-shrink::after{
     transform: translateY(145px);
     transition: all 0.5s ease;
 }
@@ -233,13 +247,29 @@ main .card-alt img {
 }
 
 .card-alt:hover button{
-    transform: translateX(-90px) rotate(-45deg) translateY(10px);
+    transform: translateY(50px);
     transition: all 0.5s ease-in-out;
 }
 
-.card-alt:hover .price{
+.card-alt:hover .card-price{
     transform: translateX(76px);
     transition: all 0.5s ease-in-out;
+}
+
+.card-alt:hover .card-date{
+    transform: translateX(-76px);
+    transition: all 0.5s ease-in-out;
+}
+
+.card-alt .card-title{
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 30;
 }
 
 /* CONTACT CSS */
