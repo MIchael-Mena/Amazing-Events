@@ -19,9 +19,6 @@ const card = (event) => `
                                 </div>
                                 <h3 class="card-title">${event.name}</h3>
                                 <div class="card-body">
-                                    <!-- Eliminar flex y usar posiciones absolutas -->
-                                    <!--<div class="d-flex justify-content-between align-items-center pt-5">
-                                    </div>-->
                                     <span class="card-price card-data-style">Price $${event.price}</span>
                                     <button type="button" class="btn btn-sm " onclick="showDetail('${event["_id"]}')">
                                             See more...
