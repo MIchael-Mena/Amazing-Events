@@ -65,6 +65,11 @@ main{
     box-shadow: 0 0 0 0.2rem #f9a826;
 }
 
+.arrow-disabled {
+    color: #b7b7b7;
+    cursor: not-allowed;
+}
+
 .nav-arrow {
     background-color: #913175;
     box-shadow: 0 0.2rem 0 0.2rem #d90268;

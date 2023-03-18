@@ -12,11 +12,6 @@ main .card-alt img:hover {
     transition: all 0.5s ease;
 }
 
-.arrow-disabled {
-    color: #b7b7b7;
-    cursor: not-allowed;
-}
-
 .card-alt .card-img{
     width: auto;
     height: 200px;
