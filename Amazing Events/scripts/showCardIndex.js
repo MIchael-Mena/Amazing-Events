@@ -2,4 +2,7 @@ const showAllEvents = (eventDate, currentDate) => {
     return true
 }
 
-showCard(data, showAllEvents)
+const api = "https://mindhub-xj03.onrender.com/api/amazing";
+fetch("../assets/amazing.json")
+    .then(response => response.json())
+    .then(data => showCard(data, showAllEvents));

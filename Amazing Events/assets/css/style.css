@@ -56,3 +56,64 @@ main{
         top: 71px;
     }
 }
+
+
+/* General */
+
+.form-control:focus,
+#inputFinder:focus {
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+.nav-arrow {
+    background-color: #913175;
+    box-shadow: 0 0.2rem 0 0.2rem #d90268;
+    height: 100px;
+}
+
+.main-title {
+    font-family: 'Genos', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0.1rem 0.1rem #000;
+}
+
+.form-check:hover .form-check-input {
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+.form-check-input:focus {
+    border: none;
+    box-shadow: 0 0 0 0.2rem #f9a826;
+}
+
+.form-check-input:checked {
+    background-color: #913175;
+    border-color: #913175;
+}
+
+.arrow-active {
+    color: white;
+    cursor: pointer;
+}
+
+.arrow-active:hover {
+    color: #f9a826;
+}
+
+.arrow-active:active {
+    transform: scale(0.9);
+}
+
+.form-check-input, .form-check-label{
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.description:first-of-type:first-letter {
+    font-size: 1.8em;
+    font-family: Georgia, Times, serif;
+    margin-right: 0.05em;
+}

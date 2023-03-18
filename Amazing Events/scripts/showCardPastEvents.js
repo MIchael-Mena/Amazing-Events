@@ -2,4 +2,7 @@ const eventIsFinished = (eventDate, currentDate) => {
     return currentDate > eventDate
 }
 
-showCard(data, eventIsFinished);
+const api = "https://mindhub-xj03.onrender.com/api/amazing";
+fetch("../assets/amazing.json")
+    .then(response => response.json())
+    .then(data => showCard(data, eventIsFinished));

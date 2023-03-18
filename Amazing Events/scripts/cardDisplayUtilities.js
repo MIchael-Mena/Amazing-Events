@@ -1,6 +1,3 @@
-const [yearCurrent, monthCurrent, dayCurrent] = data.currentDate.split("-");
-const currentDate = new Date(yearCurrent, monthCurrent, dayCurrent);
-
 const notFound = `
     <div class="col d-inline-flex justify-content-center" >
         <div class="card card-alt">
@@ -36,7 +33,7 @@ const card = (event) => `
                         </div>
                         `;
 
-const comparateDate = (event, functionForCompare) => {
+const comparateDate = (event, functionForCompare, currentDate) => {
     let [year, month, day] = event.date.split("-");
     let eventDate = new Date(year, month, day);
     return functionForCompare(eventDate, currentDate)
@@ -62,12 +59,18 @@ const findAnEvent = (event, valueToFound) => {
     }
 }
 
+const convertStringToDate = (currentDate) => {
+    const [yearCurrent, monthCurrent, dayCurrent] = currentDate.split("-");
+    return new Date(yearCurrent, monthCurrent, dayCurrent);
+}
+
 
 const filterCards = (data, functionForCompare) => {
     const valueToFound = getFinderParameter();
+    const currentDate = convertStringToDate(data.currentDate);
     return  `
                 ${data.events.map(event => {
-                    if( comparateDate(event, functionForCompare) 
+                    if( comparateDate(event, functionForCompare, currentDate) 
                         && findAnEvent(event,valueToFound) 
                         && filterCategories(event) ){
                         return card(event)

@@ -1,0 +1,57 @@
+/* STATS CSS */
+
+.stats {
+    /*background-color: #d50267;*/
+    color: #e9e8e8;
+    font-family: 'Genos', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 0.2rem 0 0.2rem #913175;
+    overflow: hidden;
+    text-align: center;
+}
+
+.stats tr td{
+    padding: 0 0.2rem;
+}
+
+.stats tr th {
+    padding: 0.3rem 0;
+    background-color: #20262e;
+}
+
+/*.stats tr th:hover {
+    background-color: #f9a826;
+    color: #20262e;
+}*/
+
+.title-tr td{
+    padding: 0.3rem 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    /*background-color: #d50267;*/
+    background-color: #20262e;
+}
+
+.title-tr td:nth-child(even) {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.title-tr td:hover {
+    background-color: #f9a826;
+    color: #20262e;
+}
+
+.basic-tr td{
+    padding: 0.3rem 0;
+    /*background-color: #913175;*/
+    background-color: #d50267;
+    border-top: 2px solid #fff;
+}
+
+.basic-tr td:nth-child(even) {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}

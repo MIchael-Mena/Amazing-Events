@@ -1,6 +1,8 @@
-// Data es una variable global, no es necesario pasarla como parámetro
 const eventIsAvailable = (eventDate, currentDate) => {
     return currentDate < eventDate
 }
+const api = "https://mindhub-xj03.onrender.com/api/amazing";
+fetch("../assets/amazing.json")
+    .then(response => response.json())
+    .then(data => showCard(data, eventIsAvailable));
 
-showCard(data, eventIsAvailable)

@@ -2,18 +2,29 @@ function backPreviousPage() {
     window.history.back();
 }
 
-const parameters = new URL(location.href);
-const id = parameters.searchParams.get("id");
-const event = data.events.find((event) => event["_id"] == id);
-const [year, month, day] = event.date.split("-");
-const [yearCurrent, monthCurrent, dayCurrent] = data.currentDate.split("-")
+const api = "https://mindhub-xj03.onrender.com/api/amazing";
+fetch("../assets/amazing.json")
+    .then(response => response.json())
+    .then(data => {
+        const parameters = new URL(location.href);
+        const id = parameters.searchParams.get("id");
+        const event = data.events.find((event) => event["_id"] == id);
+        showEventDetail(event, data.currentDate);
+    });
 
-let eventIsActive = new Date(year, month, day) > new Date(yearCurrent, monthCurrent, dayCurrent);
-let classEventIsActive = eventIsActive ? "badge bg-primary" : "badge bg-danger";
-let markDate = eventIsActive ? "date-active" : "date-inactive";
-let eventConcurrence = event.estimate ? 'Estimate: ' : 'Assistance: ';
+const eventDetail = (event, currentDate) => {
+    const [year, month, day] = event.date.split("-");
+    const [yearCurrent, monthCurrent, dayCurrent] = currentDate.split("-")
+    let eventIsActive = new Date(year, month, day) > new Date(yearCurrent, monthCurrent, dayCurrent);
+    let classEventIsActive = eventIsActive ? "badge bg-primary" : "badge bg-danger";
+    let markDate = eventIsActive ? "date-active" : "date-inactive";
+    let eventConcurrence = event.estimate ? 'Estimate: ' : 'Assistance: ';
+    return [markDate, classEventIsActive, eventIsActive, eventConcurrence];
+}
 
-document.getElementById("event-detail").innerHTML = `
+const showEventDetail = (event, currenDate) => {
+    const [markDate, classEventIsActive, eventIsActive, eventConcurrence] = eventDetail(event, currenDate);
+    document.getElementById("event-detail").innerHTML = `
                     <div class="col-md-6 img-detail p-0">
                         <img src="${event.image}" class="img-card-detail"alt="Event-1">
                     </div>
@@ -44,3 +55,4 @@ document.getElementById("event-detail").innerHTML = `
                         </span
                     </div>
                     `;
+}
