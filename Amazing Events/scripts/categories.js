@@ -1,11 +1,11 @@
 const data = {
     "categories": [
-        "Food Fair",
+        "Food",
         "Museum",
-        "Costume Party",
-        "Music Concert",
+        "Party",
+        "Concert",
         "Race",
         "Cinema",
-        "Book Exchange",
+        "Books",
     ]
 }
